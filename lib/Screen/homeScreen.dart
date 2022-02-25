@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ListView(
           physics: const BouncingScrollPhysics(),
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
-                      children: [
+                      children: const [
                         Icon(
                           Icons.search,
                           color: Colors.grey,
@@ -95,24 +95,41 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 30,
                 ),
                 Container(
                   width: 50,
                   height: 45,
-                  child: Icon(
+                  child: const Icon(
                     Icons.filter_list_alt,
                     color: Colors.grey,
                   ),
                   decoration: BoxDecoration(
                       color: Colors.grey[200],
-                      borderRadius: BorderRadius.all(Radius.circular(15))),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(15))),
                 ),
               ],
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              physics: const BouncingScrollPhysics(),
+              child: Row(
+                children: [
+                  bolc("asstes/image/Bakery.png", "Bakery"),
+                  bolc("asstes/image/fruit.png", "Fruis", isSelect: true),
+                  bolc("asstes/image/veg.png", "Vegetables"),
+                  bolc("asstes/image/milk.jpg", "Milk"),
+                  bolc("asstes/image/Bakery.png", "Bakery"),
+                  bolc("asstes/image/fruit.png", "Fruis"),
+                  bolc("asstes/image/veg.png", "Vegetables"),
+                  bolc("asstes/image/milk.jpg", "Milk"),
+                ],
+              ),
             ),
             Container(
               decoration: BoxDecoration(
@@ -136,22 +153,22 @@ class _MyHomePageState extends State<MyHomePage> {
                 controller: ScrollController(keepScrollOffset: false),
                 shrinkWrap: true,
                 children: [
-                  item(true, "asstes/image/lemon_PNG25276.png", 100.5, "lemon",
+                  item(true, "asstes/image/lemon_PNG25276.png", 1.10, "lemon",
                       "Bergamo italy"),
-                  item(false, "asstes/image/lemon_PNG25276.png", 100.5, "lemon",
+                  item(false, "asstes/image/banana.png", 2.05, "Banana",
+                      "Cattier italiano"),
+                  item(false, "asstes/image/grape.png", 3.15, "Grape",
+                      "Cattier italiano"),
+                  item(false, "asstes/image/orang.png", 100.5, "orange",
+                      "Cattier italiano"),
+                  item(true, "asstes/image/lemon_PNG25276.png", 1.10, "lemon",
                       "Bergamo italy"),
-                  item(false, "asstes/image/lemon_PNG25276.png", 100.5, "lemon",
-                      "Bergamo italy"),
-                  item(false, "asstes/image/lemon_PNG25276.png", 100.5, "lemon",
-                      "Bergamo italy"),
-                  item(true, "asstes/image/lemon_PNG25276.png", 100.5, "lemon",
-                      "Bergamo italy"),
-                  item(false, "asstes/image/lemon_PNG25276.png", 100.5, "lemon",
-                      "Bergamo italy"),
-                  item(true, "asstes/image/lemon_PNG25276.png", 100.5, "lemon",
-                      "Bergamo italy"),
-                  item(true, "asstes/image/lemon_PNG25276.png", 100.5, "lemon",
-                      "Bergamo italy"),
+                  item(false, "asstes/image/banana.png", 2.05, "Banana",
+                      "Cattier italiano"),
+                  item(false, "asstes/image/grape.png", 3.15, "Grape",
+                      "Cattier italiano"),
+                  item(true, "asstes/image/orang.png", 100.5, "orange",
+                      "Cattier italiano"),
                 ],
               ),
             ),
@@ -198,11 +215,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                 topLeft: Radius.circular(20),
                                 bottomRight: Radius.circular(20))),
                       )
-                    : Container(
+                    : const SizedBox(
                         width: 70,
                         height: 30,
                       ),
-                Spacer(),
+                const Spacer(),
                 Container(
                     alignment: Alignment.topRight,
                     width: 70,
@@ -224,7 +241,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
-                    child: Container(
+                    child: SizedBox(
                       width: 100,
                       height: 100,
                       child: Image(
