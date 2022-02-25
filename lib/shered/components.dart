@@ -5,7 +5,7 @@ int number = 0;
 List<Widget> items = [];
 Widget buttomBar() {
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 100),
+    padding: const EdgeInsets.symmetric(horizontal: 50),
     child: Container(
       decoration: BoxDecoration(
           color: Colors.white,
@@ -21,6 +21,7 @@ Widget buttomBar() {
       width: double.infinity,
       height: 50,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -30,9 +31,6 @@ Widget buttomBar() {
                   "Total:",
                   style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
-                const SizedBox(
-                  width: 30,
-                ),
                 Text(
                   "${number}x €$totalPrice",
                   style: const TextStyle(color: Colors.black, fontSize: 20),
@@ -40,7 +38,6 @@ Widget buttomBar() {
               ],
             ),
           ),
-          const Spacer(),
           Container(
             height: 50,
             width: 90,
