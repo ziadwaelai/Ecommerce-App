@@ -32,7 +32,7 @@ Widget buttomBar() {
                   style: TextStyle(color: Colors.grey, fontSize: 20),
                 ),
                 Text(
-                  "${number}x €$totalPrice",
+                  "${number}x €${totalPrice.roundToDouble()}",
                   style: const TextStyle(color: Colors.black, fontSize: 20),
                 )
               ],
@@ -67,6 +67,44 @@ Widget buttomBar() {
           ),
         ],
       ),
+    ),
+  );
+}
+
+Widget bolc(String url, String label, {bool isSelect = false}) {
+  return SizedBox(
+    width: 90,
+    height: 122,
+    child: Column(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+              color: isSelect ? Colors.green[600] : Colors.white,
+              border: Border.all(color: Colors.grey),
+              borderRadius: BorderRadius.circular(15)),
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Image(
+              image: AssetImage(url),
+              fit: BoxFit.fill,
+            ),
+          ),
+          width: 70,
+          height: 70,
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Center(
+          child: Text(
+            label,
+            style: const TextStyle(fontSize: 18, color: Colors.grey),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 2,
+            textAlign: TextAlign.center,
+          ),
+        )
+      ],
     ),
   );
 }
